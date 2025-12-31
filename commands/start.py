@@ -5,13 +5,10 @@ from aiogram.enums import ParseMode
 
 router = Router()
 
-ALLOWED_GROUP = 0
-OWNER_ID = 5911009164
+ALLOWED_USERS = [5911009164, 5927967429]
 
 def check_access(msg: Message) -> bool:
-    if msg.chat.id == ALLOWED_GROUP:
-        return True
-    if msg.chat.type == "private" and msg.from_user.id == OWNER_ID:
+    if msg.chat.type == "private" and msg.from_user.id in ALLOWED_USERS:
         return True
     return False
 
@@ -20,7 +17,7 @@ async def start_handler(msg: Message):
     if not check_access(msg):
         await msg.answer(
             "<blockquote><code>𝗔𝗰𝗰𝗲𝘀𝘀 𝗗𝗲𝗻𝗶𝗲𝗱 ❌</code></blockquote>\n\n"
-            "<blockquote>「❃」 𝗝𝗼𝗶𝗻 𝘁𝗼 𝘂𝘀𝗲 : <code>@proscraperbot</code></blockquote>",
+            "<blockquote>「❃」 𝗬𝗼𝘂 𝗮𝗿𝗲 𝗻𝗼𝘁 𝗮𝘂𝘁𝗵𝗼𝗿𝗶𝘇𝗲𝗱 𝘁𝗼 𝘂𝘀𝗲 𝘁𝗵𝗶𝘀 𝗯𝗼𝘁</blockquote>",
             parse_mode=ParseMode.HTML
         )
         return
@@ -42,7 +39,7 @@ async def help_handler(msg: Message):
     if not check_access(msg):
         await msg.answer(
             "<blockquote><code>𝗔𝗰𝗰𝗲𝘀𝘀 𝗗𝗲𝗻𝗶𝗲𝗱 ❌</code></blockquote>\n\n"
-            "<blockquote>「❃」 𝗝𝗼𝗶𝗻 𝘁𝗼 𝘂𝘀𝗲 : <code>@proscraperbot</code></blockquote>",
+            "<blockquote>「❃」 𝗬𝗼𝘂 𝗮𝗿𝗲 𝗻𝗼𝘁 𝗮𝘂𝘁𝗵𝗼𝗿𝗶𝘇𝗲𝗱 𝘁𝗼 𝘂𝘀𝗲 𝘁𝗵𝗶𝘀 𝗯𝗼𝘁</blockquote>",
             parse_mode=ParseMode.HTML
         )
         return
