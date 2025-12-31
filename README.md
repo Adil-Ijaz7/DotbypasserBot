@@ -12,7 +12,7 @@ This bot can be deployed to run automatically on GitHub Actions.
 2. Navigate to **Settings** > **Secrets and variables** > **Actions**
 3. Click on **New repository secret**
 4. Name: `BOT_TOKEN`
-5. Value: Your Telegram bot token (e.g., `8240564673:AAGvviuvEEyRMua5sUoUoSwJJSgmBQH2VR8`)
+5. Value: Your Telegram bot token (e.g., `1234567890:ABCdefGHIjklMNOpqrsTUVwxyz`)
 6. Click **Add secret**
 
 ### Running the Bot
