@@ -1,1 +1,5 @@
-BOT_TOKEN = "8240564673:AAGvviuvEEyRMua5sUoUoSwJJSgmBQH2VR8"
+import os
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+if not BOT_TOKEN:
+    raise ValueError("BOT_TOKEN environment variable is not set")
